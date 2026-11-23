@@ -1,0 +1,147 @@
+.catalog-header {
+    border-inline-start: 10px solid var(--yellow);
+    padding-inline-start: clamp(14px, 2vw, 28px);
+}
+.catalog-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-block: 24px clamp(28px, 4vw, 52px);
+}
+.catalog-navigation a, .catalog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: .875rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.product-group, .product-card[id] {
+    scroll-margin-top: 20px;
+}
+.product-group > h2 {
+    font: 400 clamp(1.5rem, 3vw, 2.375rem)/1.15 Gilroy-Medium, Arial, sans-serif;
+    letter-spacing: -.03em;
+}
+.product-group > h2 {
+    border-top: 1px solid var(--line);
+    padding-block: 14px 16px;
+}
+.page-products-content-items-list-wrqp {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    margin-left: -10px;
+    margin-right: -10px;
+    display: grid;
+}
+.page-products-content-items-wrqp {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+@media screen and (max-width: 991px) {
+    .page-products-content-items-wrqp {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* Development board specifications */
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    gap: clamp(16px, 3vw, 32px);
+    margin-bottom: 16px;
+}
+.board-card {
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    scroll-margin-top: 20px;
+}
+.board-card:target {
+    outline: 2px solid var(--ink);
+    outline-offset: -2px;
+    box-shadow: inset 0 -5px var(--yellow);
+}
+.board-card > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    background: var(--paper-shadow);
+}
+.board-card-content {
+    padding: clamp(12px, 2vw, 24px);
+}
+.board-card-content h3 {
+    font-size: clamp(1.125rem, 2.5vw, 1.625rem);
+}
+.board-card-content p {
+    margin-block: 8px 16px;
+    line-height: 1.5;
+}
+.board-specs {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9375rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+.board-specs caption {
+    padding: 10px;
+    background: var(--yellow);
+    text-align: left;
+    font-weight: 700;
+}
+.board-specs th,
+.board-specs td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+}
+.board-specs th {
+    width: 31%;
+    text-align: left;
+}
+
+.pricing-note { margin-top: .5rem; line-height: 1.5; }
+.board-card-content .product-price { font-size: 1.125rem; font-weight: 700; margin-block: .45rem .75rem; }
+
+.page-shell > .pagehead { margin-bottom: clamp(2rem, 5vw, 4rem); }
+.board-grid { align-items: start; }
+.product-details { border-block: 1px solid var(--line); }
+.product-details summary { cursor: pointer; padding: .85rem .25rem; font-weight: 700; }
+.product-details summary::marker { color: var(--ink); }
+.product-details[open] summary { background: var(--paper-shadow); }
+.product-enquiry {
+    display: inline-flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; margin-top: 1rem; padding: .75rem 1rem;
+    background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 700;
+}
+.product-enquiry span { color: var(--yellow); }
+.catalog-navigation a:hover, .catalog-navigation a:focus-visible { background: var(--yellow); }
+.product-enquiry:hover, .product-enquiry:focus-visible { background: #424242; }
+.product-details summary:focus-visible, .product-enquiry:focus-visible, .catalog-navigation a:focus-visible {
+    outline: 2px solid var(--ink); outline-offset: 3px;
+}
+.catalog-header { position: relative; padding-bottom: 1rem; }
+.catalog-header::after {
+    content: ""; position: absolute; bottom: 0; left: 0;
+    height: 3px; width: min(14rem, 50%); transform-origin: left;
+    background: repeating-linear-gradient(120deg, var(--ink) 0 6px, transparent 6px 10px);
+}
+@media (prefers-reduced-motion: no-preference) {
+    .catalog-header::after { animation: rule-enter .55s ease-out both; }
+    .catalog-header h1 { animation: heading-enter .4s ease-out both; }
+    .product-details[open] table { animation: heading-enter .18s ease-out; }
+    .product-enquiry span { transition: transform .18s ease-out; }
+    .product-enquiry:is(:hover, :focus-visible) span { transform: translate(2px, -2px); }
+    @keyframes rule-enter { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes heading-enter { from { opacity: .35; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+}

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Novecentosanswide-Bold';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:local("Novecentosanswide-Bold"),
+    url(Assets/Font/Novecentosanswide-Bold.3fdbac.woff2) format("woff2"),
+    url(Assets/Font/Novecentosanswide-Bold.2e0acc.ttf) format("truetype");
+}
+@font-face {
+    font-family: Gilroy-Light;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Gilroy-Light"), 
+    url(Assets/Font/Gilroy-Light.9981d6.woff2) format("woff2"), 
+    url(Assets/Font/Gilroy-Light.dab230.ttf) format("truetype");
+}
+@font-face {
+    font-family: Gilroy-Medium;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Gilroy-Medium"),
+    url(Assets/Font/Gilroy-Medium.376b06.woff2) format("truetype");
+}
+@media(max-width:760px){
+    .navbar{
+        flex-wrap:wrap;
+        padding:12px 5.5%;
+        gap:10px;
+    }
+    .top_left_main{
+        gap:15px;
+    }
+    .nav-links,.product-links{
+        gap:8px;
+    }
+    .page-shell{
+        width:89%;
+    }
+    .utility-bar{
+        grid-template-columns:minmax(0,1fr)30px;
+    }
+}
